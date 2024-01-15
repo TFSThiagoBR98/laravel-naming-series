@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "tfsthiagobr98/laravel-naming-series",
+    "description": "Generate Custom Ids for your models",
     "keywords": [
-        ":vendor_name",
+        "Thiago França da Silva",
         "laravel",
-        ":package_slug"
+        "laravel-naming-series"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/tfsthiagobr98/laravel-naming-series",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Thiago França da Silva",
+            "email": "contact@tfs.dev.br",
             "role": "Developer"
         }
     ],
@@ -35,19 +35,19 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "TFSThiagoBR98\\LaravelNamingSeries\\": "src/",
+            "TFSThiagoBR98\\LaravelNamingSeries\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "TFSThiagoBR98\\LaravelNamingSeries\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-laravel-naming-series --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
@@ -73,10 +73,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "TFSThiagoBR98\\LaravelNamingSeries\\LaravelNamingSeriesServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelNamingSeries": "TFSThiagoBR98\\LaravelNamingSeries\\Facades\\LaravelNamingSeries"
             }
         }
     },
