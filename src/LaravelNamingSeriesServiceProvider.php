@@ -19,7 +19,7 @@ class LaravelNamingSeriesServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-naming-series')
             ->hasConfigFile()
-            ->hasMigration('create_naming_series_table.php');
+            ->hasMigration('create_naming_series_table');
     }
 
     public function packageRegistered(): void
