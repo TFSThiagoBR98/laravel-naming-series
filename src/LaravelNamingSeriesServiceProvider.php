@@ -6,7 +6,6 @@ namespace TFSThiagoBR98\LaravelNamingSeries;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use TFSThiagoBR98\LaravelNamingSeries\Commands\LaravelNamingSeriesCommand;
 
 class LaravelNamingSeriesServiceProvider extends PackageServiceProvider
 {

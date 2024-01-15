@@ -12,12 +12,11 @@ class Builder extends BaseBuilder
     /**
      * Add unique IDs to the inserted values.
      *
-     * @param  array  $values
      * @return array
      */
     protected function addUniqueIdsToUpsertValues(array $values)
     {
-        if (!$this->model->usesUniqueIds()) {
+        if (! $this->model->usesUniqueIds()) {
             return $values;
         }
 
@@ -28,7 +27,7 @@ class Builder extends BaseBuilder
 
         foreach ($uniqueIds as $uniqueIdAttribute => $method) {
             foreach ($values as &$row) {
-                if (!array_key_exists($uniqueIdAttribute, $row)) {
+                if (! array_key_exists($uniqueIdAttribute, $row)) {
                     if ($method instanceof Closure) {
                         $row = array_merge([$uniqueIdAttribute => $method($uniqueIdAttribute, $this->model)], $row);
                     } else {

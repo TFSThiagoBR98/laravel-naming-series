@@ -42,7 +42,6 @@ trait UsingNamingSeries
     /**
      * Get a format for field
      *
-     * @return string
      * @throws InvalidNamingSeriesFormat If field is missing from list
      */
     public static function getFieldSerieFormat(string $field): string
@@ -78,7 +77,8 @@ trait UsingNamingSeries
         }
     }
 
-    public function getSeriesField(string $field, self $model) {
+    public function getSeriesField(string $field, self $model)
+    {
         return LaravelNamingSeries::generateIdForField($model, $field, null);
     }
 }

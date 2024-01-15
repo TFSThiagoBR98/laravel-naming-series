@@ -30,7 +30,8 @@ class LaravelNamingSeries
         return config('naming-series.initial_increment', 1000);
     }
 
-    public function generateIdForField(HasNamingSeries $model, string $field, ?string $connection = null): string {
+    public function generateIdForField(HasNamingSeries $model, string $field, ?string $connection = null): string
+    {
         // Fetch format from Model
         $format = $model::getFieldSerieFormat($field);
 
@@ -42,7 +43,7 @@ class LaravelNamingSeries
             $model::class, $field, $prefix, $connection);
 
         // Build final ID
-        $serie = $this->parseSerieFormat($format, $newCurrent);;
+        $serie = $this->parseSerieFormat($format, $newCurrent);
 
         // Save Sequence to Table
         DB::connection($connection ?? $this->getConnection())
@@ -52,7 +53,7 @@ class LaravelNamingSeries
                     'field' => $field,
                     'prefix' => $prefix,
                     'current' => $newCurrent,
-                ]
+                ],
             ], ['model', 'field', 'prefix'], ['current']);
 
         return $serie;
@@ -62,9 +63,11 @@ class LaravelNamingSeries
      * Parser Serie Format from Model and gen new Key
      *
      * Based on Frappe Naming Series
+     *
      * @return array<int,string>
      */
-    public function parseSerieFormat(string $format, ?int $nextId): string {
+    public function parseSerieFormat(string $format, ?int $nextId): string
+    {
         $parts = explode($this->splitWith(), $format);
         $mount = '';
         $now = Carbon::nowWithSameTz();
@@ -72,23 +75,23 @@ class LaravelNamingSeries
 
         foreach ($parts as $component) {
             if (str_starts_with($component, '#')) {
-                if (!$series_set && $nextId != null) {
+                if (! $series_set && $nextId != null) {
                     $pad = strlen($component);
                     $mount .= mb_str_pad("$nextId", $pad, '0', STR_PAD_LEFT);
                 }
-            } else if ($component == 'YY') {
+            } elseif ($component == 'YY') {
                 $mount .= $now->isoFormat('YY');
-            } else if ($component == 'YYYY') {
+            } elseif ($component == 'YYYY') {
                 $mount .= $now->isoFormat('Y');
-            } else if ($component == 'MM') {
+            } elseif ($component == 'MM') {
                 $mount .= $now->isoFormat('MM');
-            } else if ($component == 'DD') {
+            } elseif ($component == 'DD') {
                 $mount .= $now->isoFormat('DD');
-            } else if ($component == 'WW') {
+            } elseif ($component == 'WW') {
                 $mount .= $now->isoFormat('WW');
-            } else if ($component == 'TS') {
+            } elseif ($component == 'TS') {
                 $mount .= $now->isoFormat('x');
-            } else if ($component == 'TL') {
+            } elseif ($component == 'TL') {
                 $mount .= $now->isoFormat('X');
             } else {
                 $mount .= $component;
@@ -98,7 +101,8 @@ class LaravelNamingSeries
         return $mount;
     }
 
-    protected function getNextSequence(string $model, ?string $field, ?string $prefix, ?string $connection = null): int {
+    protected function getNextSequence(string $model, ?string $field, ?string $prefix, ?string $connection = null): int
+    {
         $latestId = DB::connection($connection ?? $this->getConnection())
             ->table($this->getTable())
             ->where('model', $model)
