@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('prefix')->nullable();
             $table->string('current')->default('0');
 
-            $table->primary(['model', 'prefix']);
+            $table->primary(['model', 'field', 'prefix']);
         });
     }
 
