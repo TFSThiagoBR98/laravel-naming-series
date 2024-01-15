@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TFSThiagoBR98\LaravelNamingSeries\Contracts;
+namespace TFSThiagoBR98\LaravelNamingSeries\Concerns;
 
 use Closure;
 use TFSThiagoBR98\LaravelNamingSeries\Database\Builder;
