@@ -111,9 +111,9 @@ class LaravelNamingSeries
             ->first();
 
         if ($latestId == null) {
-            return 1;
+            return $this->initialIncrement();
         } else {
-            return $latestId->current + $this->initialIncrement();
+            return $latestId->current + 1;
         }
     }
 }
