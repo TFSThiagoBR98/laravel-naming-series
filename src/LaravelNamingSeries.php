@@ -78,6 +78,7 @@ class LaravelNamingSeries
                 if (! $series_set && $nextId != null) {
                     $pad = strlen($component);
                     $mount .= mb_str_pad("$nextId", $pad, '0', STR_PAD_LEFT);
+                    $series_set = true;
                 }
             } elseif ($component == 'YY') {
                 $mount .= $now->isoFormat('YY');
