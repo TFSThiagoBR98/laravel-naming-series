@@ -70,7 +70,7 @@ class LaravelNamingSeries
     {
         $parts = explode($this->splitWith(), $format);
         $mount = '';
-        $now = Carbon::nowWithSameTz();
+        $now = Carbon::now();
         $series_set = false;
 
         foreach ($parts as $component) {
