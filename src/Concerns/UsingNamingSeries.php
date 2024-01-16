@@ -16,16 +16,9 @@ trait UsingNamingSeries
      *
      * @var array<string,string>
      */
-    public static array $namingSeries = [];
-
-    /**
-     * Field => Format list for model fields
-     *
-     * @var array<string,string>
-     */
     public static function getSerieList(): array
     {
-        return self::namingSeries;
+        return [];
     }
 
     /**

@@ -63,9 +63,12 @@ class Contract extends Model implements HasNamingSeries
      *
      * @var array<string,string>
      */
-    public static array $namingSeries = [
-        'code' => 'CNT-.YY.MM.####',
-    ];
+    public static function getSerieList(): array
+    {
+        return [
+            'code' => 'CNT-.YY.MM.####',
+        ];
+    }
 
     /**
      * Get the columns that should receive a unique identifier.
