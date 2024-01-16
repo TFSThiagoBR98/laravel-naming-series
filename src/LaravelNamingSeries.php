@@ -25,7 +25,7 @@ class LaravelNamingSeries
         return config('naming-series.split_with', '.');
     }
 
-    protected function initialIncrement(): ?string
+    protected function initialIncrement(): ?int
     {
         return config('naming-series.initial_increment', 1000);
     }
