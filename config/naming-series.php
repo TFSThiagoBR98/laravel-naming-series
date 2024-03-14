@@ -1,6 +1,5 @@
 <?php
 
-// config for TFSThiagoBR98/LaravelNamingSeries
 return [
     'database' => [
         'connection' => null,
