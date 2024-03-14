@@ -63,8 +63,6 @@ class LaravelNamingSeries
      * Parser Serie Format from Model and gen new Key
      *
      * Based on Frappe Naming Series
-     *
-     * @return string
      */
     public function parseSerieFormat(string $format, ?int $nextId): string
     {
