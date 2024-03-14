@@ -64,7 +64,7 @@ class LaravelNamingSeries
      *
      * Based on Frappe Naming Series
      *
-     * @return array<int,string>
+     * @return string
      */
     public function parseSerieFormat(string $format, ?int $nextId): string
     {
