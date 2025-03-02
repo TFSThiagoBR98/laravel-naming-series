@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-naming-series` will be documented in this file.
 
+## Version 2.1.0 - 2025-03-02
+
+- Add support to Laravel 12
+
 ## 2.0.0 - 2024-03-14
 
 ### What's Changed
